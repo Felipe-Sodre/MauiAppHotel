@@ -57,6 +57,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="NovaPasta\NovaPasta1\**" />
+	  <AndroidResource Remove="NovaPasta\NovaPasta\**" />
+	  <Compile Remove="NovaPasta\NovaPasta1\**" />
+	  <Compile Remove="NovaPasta\NovaPasta\**" />
+	  <EmbeddedResource Remove="NovaPasta\NovaPasta1\**" />
+	  <EmbeddedResource Remove="NovaPasta\NovaPasta\**" />
+	  <MauiCss Remove="NovaPasta\NovaPasta1\**" />
+	  <MauiCss Remove="NovaPasta\NovaPasta\**" />
+	  <MauiXaml Remove="NovaPasta\NovaPasta1\**" />
+	  <MauiXaml Remove="NovaPasta\NovaPasta\**" />
+	  <None Remove="NovaPasta\NovaPasta1\**" />
+	  <None Remove="NovaPasta\NovaPasta\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />

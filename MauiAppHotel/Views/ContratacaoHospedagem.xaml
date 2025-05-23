@@ -14,10 +14,23 @@
             FontSize="50"
             TextColor="{StaticResource SecondaryDarkText}" />
 
-        <Frame Padding="10">
+        
+        <!--Divisão geral-->
+        <Frame Padding="10"
+               Margin="10">
             <VerticalStackLayout>
-                <Grid RowDefinitions="Auto, Auto"
+                
+                <!--Divisão da escolha de pessoas-->
+                <Frame Margin="5"
+                       BackgroundColor="{StaticResource Gray100}">
+
+                    
+           
+
+                    <Grid RowDefinitions="Auto, Auto"
                       ColumnDefinitions="*, *, 2*">
+                    
+                    
 
                     <Label Grid.Row="0" Grid.Column="0"
                            Text="Adultos:"/>
@@ -49,31 +62,47 @@
 
                 </Grid>
 
-                <Label Text="Escolha Suíte" />
+                </Frame>
 
-                <Picker x:Name="pck_quarto"
-                        Title="Selecione sua Acomodação"/>
-
-                <Frame Padding="10"
-                       Margin="10"
-                       BackgroundColor="{StaticResource Secondary}">
+                <!--DIVISÃO "ESCOLHA SUÍTE"-->
+                <Frame BackgroundColor="{StaticResource Gray100}"
+                       Margin="5">
                     <VerticalStackLayout>
-                        <Label Text="Período da Estadia"/>
+                        <Label Text="Escolha Suíte" 
+                               FontSize="30"/>
+
+                        <Picker x:Name="pck_quarto"
+                                Title="Selecione sua Acomodação"
+                                ItemDisplayBinding="{Binding Descricao}"
+                                TextColor="{StaticResource Primary}"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!--DIVISÃO DO PERIODO DA ESTADIA-->
+                <Frame Padding="10"
+                       Margin="5"
+                       BackgroundColor="{StaticResource Gray100}">
+                    <VerticalStackLayout>
+                        <Label Text="Período da Estadia"
+                               FontSize="30"/>
                         <HorizontalStackLayout>
                             <Label Text="Check-in:"/>
                             <DatePicker x:Name="dtpck_checkin"
-                                        Format="dd/MM/yyyy"/>
+                                        DateSelected="dtpck_checkin_DateSelected"
+                                        Format="dd/MM/yyyy"
+                                        TextColor="{StaticResource Primary}"/>
                         </HorizontalStackLayout>
 
                         <HorizontalStackLayout>
                             <Label Text="Check-out:"/>
                             <DatePicker x:Name="dtpck_checkout"
-                                        Format="dd/MM/yyyy"/>
+                                        Format="dd/MM/yyyy"
+                                        TextColor="{StaticResource Primary}"/>
                         </HorizontalStackLayout>
                     </VerticalStackLayout>
                 </Frame>
 
-                <Button Text="Avançar" />
+                <Button Text="Avançar" Clicked="Button_Clicked"/>
 
 
             </VerticalStackLayout>
